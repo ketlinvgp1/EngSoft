@@ -10,5 +10,84 @@ height: auto;
 }
 
 h1{
- font-size: 20px;   
+ font-size: 1.25rem;   
+}
+
+/* ===== Acessibilidade ===== */
+
+/* Foco sempre visível para navegação por teclado */
+:focus-visible {
+  outline: 3px solid #ffbf00;
+  outline-offset: 2px;
+}
+
+/* Botão "Pular para o conteúdo": só aparece ao navegar por Tab */
+.pular-conteudo {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #023b86;
+  border: 2px solid #023b86;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+.pular-conteudo:focus {
+  top: 0.5rem;
+}
+
+/* Alto contraste */
+html.a11y-alto-contraste body,
+html.a11y-alto-contraste header,
+html.a11y-alto-contraste main,
+html.a11y-alto-contraste footer,
+html.a11y-alto-contraste nav,
+html.a11y-alto-contraste section,
+html.a11y-alto-contraste article,
+html.a11y-alto-contraste div:not([vw], [vw] *),
+html.a11y-alto-contraste form {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+}
+html.a11y-alto-contraste a {
+  color: #ffff00 !important;
+}
+html.a11y-alto-contraste button,
+html.a11y-alto-contraste input,
+html.a11y-alto-contraste select,
+html.a11y-alto-contraste textarea {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+html.a11y-alto-contraste button[aria-pressed='true'] {
+  background: #fff !important;
+  color: #000 !important;
+}
+html.a11y-alto-contraste img {
+  filter: grayscale(1) contrast(1.2);
+}
+
+/* Sublinhar links */
+html.a11y-sublinhar-links a {
+  text-decoration: underline !important;
+}
+
+/* Espaçamento de texto (WCAG 1.4.12) */
+html.a11y-espacamento body {
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
+  line-height: 1.5;
+}
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

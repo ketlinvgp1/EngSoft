@@ -1,3 +1,8 @@
+<!-- Atalho para quem navega por teclado / leitor de tela -->
+<button type="button" class="pular-conteudo" (click)="conteudo.focus()">
+    Pular para o conteúdo
+</button>
+
 <header class="cabecalho">
 
     <div class="container">
@@ -6,7 +11,7 @@
 
             <!-- Logo e nome -->
             <div class="marca">
-                <img 
+                <img
                     src="logotipo.png"
                     id="logotipo"
                     alt="Caminhos do Brasil">
@@ -28,23 +33,23 @@
 
 
         <!-- Menu inferior -->
-        <div class="menu-inferior">
+        <nav class="menu-inferior" aria-label="Menu principal">
 
             <a routerLink="/">Início</a>
             <a routerLink="/cesta">Cesta</a>
             <a routerLink="/destaque">Destaques</a>
             <a routerLink="/sobrenos">Sobre nós</a>
-           
 
-        </div>
+
+        </nav>
 
     </div>
 
 </header>
-<main class="conteudo">
-   <router-outlet></router-outlet> 
+<main #conteudo class="conteudo" tabindex="-1">
+   <router-outlet></router-outlet>
 </main>
-  
+
 
 <footer class="rodape text-center py-3">
 
@@ -61,3 +66,5 @@
     </p>
 
 </footer>
+
+<app-acessibilidade />

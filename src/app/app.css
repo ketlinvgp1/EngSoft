@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-   
+
 }
 
 #logotipo {
@@ -29,7 +29,7 @@
 
 .marca span {
     color: white;
-    font-size: 30px;
+    font-size: 1.875rem; /* era 30px */
     font-weight: bold;
     white-space: nowrap;
 }
@@ -63,7 +63,7 @@
     padding: 12px 30px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1.125rem; /* era 18px */
     font-weight: bold;
 }
 
@@ -96,7 +96,7 @@
     margin-top: 12px;
     padding: 10px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.4);
-    font-size: 20px;
+    font-size: 1.25rem; /* era 20px */
 }
 
 .menu-inferior a {
@@ -140,7 +140,7 @@
 }
 
 .rodape p {
-    font-size: 14px;
+    font-size: 0.875rem; /* era 14px */
 }
 :host {
     min-height: 100vh;

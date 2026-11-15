@@ -8,10 +8,10 @@
 .sobre-container h1 {
     color: #023b86;
     font-weight: bold;
-    font-size: 42px;
+    font-size: 2.625rem;
 }
 .sobre-container > .container > .text-center > p {
-    font-size: 22px;
+    font-size: 1.375rem;
 }
 
 .sobre-container h2 {
@@ -30,7 +30,7 @@
 
 /* Texto */
 .sobre-card p {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1.6;
 }
 

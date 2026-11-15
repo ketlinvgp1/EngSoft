@@ -9,6 +9,7 @@ import {Cadastro} from './cadastro/cadastro'
 import{Resultadobusca} from './resultadobusca/resultadobusca'
 import { Sobrenos } from './sobrenos/sobrenos'
 import {Destaque} from './destaque/destaque'
+import { Acessibilidade } from './acessibilidade/acessibilidade';
 
 export const routes: Routes = [
     {path:'', component: Vitrine},

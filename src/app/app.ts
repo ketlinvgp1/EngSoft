@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Busca } from './busca/busca';
+import { Acessibilidade } from './acessibilidade/acessibilidade';
 
 @Component({
-    imports: [RouterOutlet, RouterLink, Busca],
+    imports: [RouterOutlet, RouterLink, Busca, Acessibilidade],
     selector: 'app-root',
     styleUrl: './app.css',
     templateUrl: './app.html',

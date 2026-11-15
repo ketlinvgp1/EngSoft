@@ -1,0 +1,45 @@
+<button
+  type="button"
+  class="a11y-botao"
+  aria-label="Opções de acessibilidade"
+  aria-controls="a11y-painel"
+  [attr.aria-expanded]="aberto()"
+  (click)="aberto.set(!aberto())"
+>
+  ♿
+</button>
+
+@if (aberto()) {
+  <section id="a11y-painel" class="a11y-painel" aria-label="Barra de acessibilidade">
+    <h2>Acessibilidade</h2>
+
+    <div class="a11y-linha" role="group" aria-label="Tamanho do texto">
+      <button type="button" (click)="a11y.alterarFonte(-10)" aria-label="Diminuir fonte">A−</button>
+      <span aria-live="polite">{{ a11y.estado().tamanhoFonte }}%</span>
+      <button type="button" (click)="a11y.alterarFonte(10)" aria-label="Aumentar fonte">A+</button>
+    </div>
+
+    <button type="button" [attr.aria-pressed]="a11y.estado().altoContraste" (click)="a11y.alternar('altoContraste')">
+      Alto contraste
+    </button>
+    <button type="button" [attr.aria-pressed]="a11y.estado().sublinharLinks" (click)="a11y.alternar('sublinharLinks')">
+      Sublinhar links
+    </button>
+    <button type="button" [attr.aria-pressed]="a11y.estado().espacamento" (click)="a11y.alternar('espacamento')">
+      Espaçamento de texto
+    </button>
+
+    @if (a11y.vozSuportada) {
+      <div class="a11y-linha" role="group" aria-label="Leitura em voz alta">
+        <button type="button" (click)="a11y.lerSelecaoOuPagina()">🔊 Ler</button>
+        @if (a11y.falando()) {
+          <button type="button" (click)="a11y.pausar()">Pausar</button>
+          <button type="button" (click)="a11y.continuar()">Continuar</button>
+        }
+        <button type="button" (click)="a11y.parar()">Parar</button>
+      </div>
+    }
+
+    <button type="button" (click)="a11y.restaurar()">Restaurar padrão</button>
+  </section>
+}
