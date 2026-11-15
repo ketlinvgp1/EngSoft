@@ -38,34 +38,32 @@ h1{
   top: 0.5rem;
 }
 
-/* Alto contraste */
-html.a11y-alto-contraste body,
-html.a11y-alto-contraste header,
-html.a11y-alto-contraste main,
-html.a11y-alto-contraste footer,
-html.a11y-alto-contraste nav,
-html.a11y-alto-contraste section,
-html.a11y-alto-contraste article,
-html.a11y-alto-contraste div:not([vw], [vw] *),
-html.a11y-alto-contraste form {
-  background: #000 !important;
+/* Alto contraste: vale para TODOS os elementos (exceto o widget do VLibras).
+   :where() zera a especificidade, para as regras de links/botões abaixo poderem sobrescrever. */
+html.a11y-alto-contraste :where(*:not([vw]):not([vw] *)) {
+  background-color: #000 !important;
+  background-image: none !important;
   color: #fff !important;
   border-color: #fff !important;
   box-shadow: none !important;
+  text-shadow: none !important;
 }
-html.a11y-alto-contraste a {
+html.a11y-alto-contraste a,
+html.a11y-alto-contraste a * {
   color: #ffff00 !important;
 }
 html.a11y-alto-contraste button,
 html.a11y-alto-contraste input,
 html.a11y-alto-contraste select,
 html.a11y-alto-contraste textarea {
-  background: #000 !important;
-  color: #fff !important;
   border: 2px solid #fff !important;
 }
+html.a11y-alto-contraste ::placeholder {
+  color: #ddd !important;
+  opacity: 1;
+}
 html.a11y-alto-contraste button[aria-pressed='true'] {
-  background: #fff !important;
+  background-color: #fff !important;
   color: #000 !important;
 }
 html.a11y-alto-contraste img {
